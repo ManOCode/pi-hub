@@ -1,0 +1,24 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "A client-side rendering web application",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "lint": "eslint src/**/*.ts src/**/*.tsx",
+    "test": "echo 'No test runner configured yet'"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1",
+    "ts-loader": "^9.4.2",
+    "html-webpack-plugin": "^5.5.0",
+    "eslint": "^8.35.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0"
+  }
+}

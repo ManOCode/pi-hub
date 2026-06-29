@@ -9,7 +9,7 @@ ts-monorepo-webapp/
 ├── package.json
 ├── turbo.json
 ├── packages/
-│   └── web-app/
+│   └── pi-hub-web/
 │       ├── package.json
 │       ├── tsconfig.json
 │       ├── webpack.config.js

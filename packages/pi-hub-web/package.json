@@ -1,5 +1,5 @@
 {
-  "name": "web-app",
+  "name": "pi-hub-web",
   "version": "1.0.0",
   "description": "A client-side rendering web application",
   "scripts": {

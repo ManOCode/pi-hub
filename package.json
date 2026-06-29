@@ -1,7 +1,7 @@
 {
-  "name": "ts-monorepo-webapp",
+  "name": "pi-hub",
   "version": "1.0.0",
-  "description": "A TypeScript monorepo with client-side rendering web application",
+  "description": "A TypeScript monorepo for the Pi Hub web application",
   "workspaces": [
     "packages/*"
   ],

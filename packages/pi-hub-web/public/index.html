@@ -3,9 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TypeScript Web App</title>
+    <title>Pi-Hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.light-mode {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-mode .navbar {
+            background-color: #f8f9fa;
+            color: #333;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .dark-mode .navbar {
+            background-color: #333;
+            color: white;
+            border-bottom: 1px solid #555;
+        }
+        .navbar-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        .light-mode .menu-button {
+            color: #333;
+        }
+        .dark-mode .menu-button {
+            color: white;
+        }
+        .light-mode .menu-button:hover {
+            background-color: #e0e0e0;
+        }
+        .dark-mode .menu-button:hover {
+            background-color: #555;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 3.5rem;
+            right: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 100;
+            min-width: 150px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-mode .dropdown-menu {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+        }
+        .dark-mode .dropdown-menu {
+            background-color: #333;
+            border: 1px solid #555;
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .light-mode .dropdown-item {
+            color: #333;
+        }
+        .dark-mode .dropdown-item {
+            color: white;
+        }
+        .light-mode .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+        .dark-mode .dropdown-item:hover {
+            background-color: #555;
+        }
+        #app {
+            margin-top: 0;
+        }
+    </style>
 </head>
-<body>
+<body class="light-mode">
+    <nav class="navbar">
+        <div class="navbar-title">Pi-Hub</div>
+        <button class="menu-button" id="menuButton">&#9776;</button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item" id="themeToggle">Toggle Dark Mode</div>
+        </div>
+    </nav>
     <div id="app"></div>
+    <script>
+        // Toggle dropdown menu
+        const menuButton = document.getElementById('menuButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        menuButton.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+        
+        // Toggle theme
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? 
+                'Toggle Light Mode' : 'Toggle Dark Mode';
+            dropdownMenu.classList.remove('show');
+        });
+    </script>
 </body>
 </html>

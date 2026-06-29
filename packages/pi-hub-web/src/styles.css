@@ -1,3 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
 .app-container {
   max-width: 800px;
   margin: 0 auto;
@@ -19,18 +36,147 @@
   font-size: 18px;
   padding: 10px 20px;
   margin: 0 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
 }
 
 .counter button:hover {
-  background-color: #0056b3;
+  opacity: 0.9;
 }
 
 h1 {
   text-align: center;
   color: #333;
+}
+
+/* Light mode styles */
+body.light-mode h1 {
+  color: #333;
+}
+
+body.light-mode .counter button {
+  background-color: #007bff;
+  color: white;
+}
+
+body.light-mode .counter button:hover {
+  background-color: #0056b3;
+}
+
+/* Dark mode styles */
+body.dark-mode h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .counter button {
+  background-color: #4a4a4a;
+  color: white;
+}
+
+body.dark-mode .counter button:hover {
+  background-color: #5a5a5a;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .navbar {
+  background-color: #f8f9fa;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+  color: white;
+  border-bottom: 1px solid #555;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+body.light-mode .menu-button {
+  color: #333;
+}
+
+body.dark-mode .menu-button {
+  color: white;
+}
+
+body.light-mode .menu-button:hover {
+  background-color: #e0e0e0;
+}
+
+body.dark-mode .menu-button:hover {
+  background-color: #555;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 100;
+  min-width: 150px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode .dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #333;
+  border: 1px solid #555;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+body.light-mode .dropdown-item {
+  color: #333;
+}
+
+body.dark-mode .dropdown-item {
+  color: white;
+}
+
+body.light-mode .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #555;
 }

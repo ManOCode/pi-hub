@@ -1,5 +1,6 @@
 // Simple client-side rendering application
 import './styles.css';
+
 interface AppState {
   count: number;
 }
@@ -33,7 +34,7 @@ class App {
 
     this.appElement.innerHTML = `
       <div class="app-container">
-        <h1>TypeScript Web Application</h1>
+        <h1>Welcome to Pi-Hub</h1>
         <div class="counter">
           <p>Count: <span id="count">${this.state.count}</span></p>
           <button id="increment">+</button>

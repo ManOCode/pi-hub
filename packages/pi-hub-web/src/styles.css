@@ -15,97 +15,37 @@ body.dark-mode {
   color: #ffffff;
 }
 
-.app-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.counter {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.counter p {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.counter button {
-  font-size: 18px;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: none;
-}
-
-.counter button:hover {
-  opacity: 0.9;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-/* Light mode styles */
-body.light-mode h1 {
-  color: #333;
-}
-
-body.light-mode .counter button {
-  background-color: #007bff;
-  color: white;
-}
-
-body.light-mode .counter button:hover {
-  background-color: #0056b3;
-}
-
-/* Dark mode styles */
-body.dark-mode h1 {
-  color: #ffffff;
-}
-
-body.dark-mode .counter button {
-  background-color: #4a4a4a;
-  color: white;
-}
-
-body.dark-mode .counter button:hover {
-  background-color: #5a5a5a;
-}
-
-/* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.light-mode .navbar {
+/* Header styles */
+.header {
   background-color: #f8f9fa;
-  color: #333;
   border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-body.dark-mode .navbar {
+body.dark-mode .header {
   background-color: #333;
-  color: white;
   border-bottom: 1px solid #555;
 }
 
-.navbar-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.menu-button {
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.settings-button {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -113,70 +53,144 @@ body.dark-mode .navbar {
   padding: 0.5rem;
   transition: background-color 0.3s;
   border-radius: 4px;
-}
-
-body.light-mode .menu-button {
   color: #333;
 }
 
-body.dark-mode .menu-button {
+body.dark-mode .settings-button {
   color: white;
 }
 
-body.light-mode .menu-button:hover {
+.settings-button:hover {
   background-color: #e0e0e0;
 }
 
-body.dark-mode .menu-button:hover {
+body.dark-mode .settings-button:hover {
   background-color: #555;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 3.5rem;
-  right: 1rem;
+/* Main content styles */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  color: #666;
+}
+
+body.dark-mode .content p {
+  color: #ccc;
+}
+
+/* Settings styles */
+.settings-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings-content h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+body.dark-mode .settings-section {
+  background-color: #2d2d2d;
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+body.dark-mode .settings-section h3 {
+  border-bottom: 1px solid #555;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.setting-item label {
+  font-weight: 500;
+}
+
+.setting-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.setting-item input[type="password"],
+.setting-item input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: none;
-  z-index: 100;
-  min-width: 150px;
-  transition: background-color 0.3s, color 0.3s;
+  width: 250px;
 }
 
-body.light-mode .dropdown-menu {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-}
-
-body.dark-mode .dropdown-menu {
+body.dark-mode .setting-item input[type="password"],
+body.dark-mode .setting-item input[type="text"] {
   background-color: #333;
   border: 1px solid #555;
-}
-
-.dropdown-menu.show {
-  display: block;
-}
-
-.dropdown-item {
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-body.light-mode .dropdown-item {
-  color: #333;
-}
-
-body.dark-mode .dropdown-item {
   color: white;
 }
 
-body.light-mode .dropdown-item:hover {
-  background-color: #f0f0f0;
+.settings-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-body.dark-mode .dropdown-item:hover {
-  background-color: #555;
+.settings-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.settings-actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.settings-actions button:first-child:hover {
+  background-color: #0056b3;
+}
+
+.settings-actions button:last-child {
+  background-color: #6c757d;
+  color: white;
+}
+
+.settings-actions button:last-child:hover {
+  background-color: #545b62;
+}
+
+body.dark-mode .settings-actions button:first-child {
+  background-color: #007bff;
+}
+
+body.dark-mode .settings-actions button:last-child {
+  background-color: #6c757d;
 }
